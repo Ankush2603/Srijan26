@@ -327,7 +327,7 @@ const ROBOTICS_EVENTS: Event[] = [
     lastDate: "TBA",
     prizePool: "₹ 35,000",
     link: "/register/death-race",
-    driveLink: "https://drive.google.com/file/d/1Le26wRR5jGZFjMIYOPrQDyYmSyUzTVvX/view?usp=drive_link",
+    driveLink: "https://drive.google.com/file/d/1aYHvLPbTDPQ-kPY46HQuVXCj6PHR_hF-/view?usp=sharing",
     image: "/images/posters/death-race.webp",
     tags: ["Racing", "Combat"],
     status: "Open",

@@ -3,6 +3,7 @@
 import { signOut } from 'next-auth/react';
 import React from 'react';
 import Balls from '../Balls';
+import WavyGradient from '../WavyGradient';
 import { Clickable } from "@/components/Clickable";
 import { User } from '@/types/user';
 import Link from 'next/link';
@@ -28,7 +29,16 @@ function Dashboard({ user }: { user: User }) {
   return (
     <div className="relative isolate flex flex-col items-center justify-center gap-10 p-6 md:p-12 min-h-[80vh] h-fit text-white">
       <div className="fixed inset-0 -z-50 pointer-events-none">
-        <Balls />
+        <WavyGradient
+          color1="#bc6116"
+          color2="#8f0c03"
+          color3="#1A0000"
+          direction={20}
+          speed={1.5}
+          waveHeight={0.45}
+          noiseIntensity={5}
+          waveAmplitude={1}
+        />
       </div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl">
