@@ -3,6 +3,7 @@
 import { signOut } from 'next-auth/react';
 import React from 'react';
 import Balls from '../Balls';
+import WavyGradient from '../WavyGradient';
 import { Clickable } from "@/components/Clickable";
 import { User } from '@/types/user';
 import Link from 'next/link';
@@ -28,7 +29,16 @@ function Dashboard({ user }: { user: User }) {
   return (
     <div className="relative isolate flex flex-col items-center justify-center gap-10 p-6 md:p-12 min-h-[80vh] h-fit text-white">
       <div className="fixed inset-0 -z-50 pointer-events-none">
-        <Balls />
+        <WavyGradient
+          color1="#bc6116"
+          color2="#8f0c03"
+          color3="#1A0000"
+          direction={20}
+          speed={1.5}
+          waveHeight={0.45}
+          noiseIntensity={5}
+          waveAmplitude={1}
+        />
       </div>
 
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 w-full max-w-5xl">
@@ -94,7 +104,7 @@ function Dashboard({ user }: { user: User }) {
             <div className="space-y-4">
               {[
                 { label: "My Teams", data: user.teams, color: "border-l-yellow", empty: "Not part of any teams yet", isTeam: true },
-                { label: "Pending Requests", data: user.pendingTeamIds, color: "border-l-yellow", empty: "No pending invitations", isTeam: true },
+                { label: "Pending Requests", data: user.pendingTeams, color: "border-l-yellow", empty: "No pending invitations", isTeam: true },
                 { label: "Workshops", data: user.workshopIds, color: "border-l-yellow", empty: "No workshops registered", isTeam: false },
                 { label: "Wishlist", data: user.wishlistedEventIds, color: "border-l-yellow", empty: "Your wishlist is empty", isTeam: false }
               ].map((item, idx) => (
@@ -142,12 +152,14 @@ function Dashboard({ user }: { user: User }) {
         <aside className="space-y-6">
           <div className="p-6 bg-white/5 border border-yellow/20 rounded-2xl">
             <h3 className="text-yellow font-elnath mb-4 uppercase tracking-widest">Security</h3>
-            <button className="w-full py-2 border border-yellow/50 text-yellow text-xs uppercase hover:bg-yellow hover:text-black transition-all cursor-pointer">
-              Edit Profile
-            </button>
+            <Link href="/dashboard/edit-profile">
+              <button className="w-full py-2 border border-yellow/50 text-yellow text-xs uppercase hover:bg-yellow hover:text-black transition-all cursor-pointer">
+                Edit Profile
+              </button>
+            </Link>
           </div>
 
-          <div className="p-6 bg-linear-to-br from-red/20 to-orange/20 border border-red/30 rounded-2xl text-center">
+          {/* <div className="p-6 bg-linear-to-br from-red/20 to-orange/20 border border-red/30 rounded-2xl text-center">
             <p className="text-xs uppercase text-white/60 mb-2">Member Since</p>
             <p className="text-sm">
               {user.createdAt ? new Date(user.createdAt).toLocaleDateString('en-GB', {
@@ -156,7 +168,7 @@ function Dashboard({ user }: { user: User }) {
                 year: 'numeric'
               }) : "Date Unknown"}
             </p>
-          </div>
+          </div> */}
         </aside>
       </div>
 

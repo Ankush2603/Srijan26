@@ -11,17 +11,43 @@ import { AuthError } from "next-auth";
 
 const getUserByEmail = async (email: string | null) => {
   if (!email) return null;
-  const user = await prisma.user.findUnique({
-    where: { email },
-    include: {
-      teams: {
-        include: {
-          event: true 
-        }
-      }
-    }
-  });
+  const user = await prisma.user.findUnique({ where: { email } });
   return user;
+};
+
+const getDashboardDetails = async (email: string | null) => {
+  if (!email) return null;
+  try {
+
+    const userDashboardData = await prisma.user.findUnique({
+      where: { email },
+      include: {
+        teams: {
+          include: {
+            event: true,
+            members: {
+              select: { name: true, image: true }
+            }
+          }
+        },
+        pendingTeams: {
+          include: {
+            event: true
+          }
+        },
+        notifications: {
+          take: 5,
+          orderBy: { createdAt: 'desc' }
+        },
+        merchandise: true,
+        workshops: true
+      }
+    });
+    return userDashboardData;
+  } catch (err) {
+    console.error("Dashboard Fetch Error:", err);
+    return null;
+  }
 };
 
 const validateUser = async (user: User | null, password: string) => {
@@ -129,7 +155,7 @@ const checkAuthentication = async (redirectUrl = "") => {
   const session = await auth();
   const encodedRedirectUrl = encodeURIComponent(redirectUrl);
   if (!session || !session.user || !session.user.id)
-    redirect(`/signin?redirect=${encodedRedirectUrl}`);
+    redirect(`/login?redirect=${encodedRedirectUrl}`);
 
   if (redirectUrl.indexOf("dashboard") !== -1) return session.user;
 
@@ -193,6 +219,7 @@ export type AuthUser = {
 
 export {
   getUserByEmail,
+  getDashboardDetails,
   validateUser,
   handleSignin,
   signup,
