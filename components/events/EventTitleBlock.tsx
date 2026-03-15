@@ -12,7 +12,6 @@ interface Props {
 }
 
 export default function EventTitleBlock({
-  id,
   title,
   description,
   color,
