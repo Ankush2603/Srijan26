@@ -652,7 +652,7 @@ const ROBOTICS_EVENTS: Event[] = [
     rules: ["Line follower", "Maze solving", "Fastest bot"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
-    link: "/register/homecoming",
+    link: "/register/hcg",
     driveLink:
       "https://drive.google.com/file/d/1TGi6x20jm4Hhx4MPviEuxPeynzXMnPmU/view?usp=drivesdk",
     image: "/images/posters/hcg.webp",
@@ -703,7 +703,7 @@ const ROBOTICS_EVENTS: Event[] = [
     rules: ["All-terrain bot", "Speed", "Resilience"],
     lastDate: "TBA",
     prizePool: "₹ 6,000",
-    link: "/register/highway-to-hell",
+    link: "/register/h2h",
     driveLink:
       "https://drive.google.com/file/d/1QkjKX1ZRQR5JkWCj_3XPsvGVQRF8zEuD/view?usp=drivesdk",
     image: "/images/posters/h2h.webp",
@@ -1551,7 +1551,7 @@ const MISC_EVENTS: Event[] = [
     rules: ["Reel making", "Storytelling", "Cinematography"],
     lastDate: "TBA",
     prizePool: "NIL",
-    link: "/register/reel-a-tion",
+    link: "/register/rat",
     driveLink:
       "https://drive.google.com/file/d/19SNwpTh4R7KP2ZcH2FBPxbT8-wFG7jlK/view?usp=drivesdk",
     image: "/images/posters/rat.webp",
