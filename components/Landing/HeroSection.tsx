@@ -211,16 +211,28 @@ export function HeroSection() {
         }}
       >
         <video
-          src="/videos/landing/srijan_hero_compressed_1080p_crf32.webm"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          poster="/videos/landing/srijan_hero_poster.jpg"
+          preload="metadata"
           disablePictureInPicture
           disableRemotePlayback
           className="absolute inset-0 w-full h-full object-cover opacity-70"
-        />
+        >
+          {/* Desktop: full 1080p */}
+          <source
+            media="(min-width: 768px)"
+            src="/videos/landing/srijan_hero_compressed_1080p_crf32.webm"
+            type="video/webm"
+          />
+          {/* Mobile / tablet: lighter 720p */}
+          <source
+            src="/videos/landing/srijan_hero_mobile_720p.webm"
+            type="video/webm"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent" />
       </div>
 
