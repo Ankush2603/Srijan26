@@ -76,7 +76,10 @@ export default function RootLayout({
             <body
                 className={`${euclid.variable} ${elnath.variable} ${futura.variable} antialiased`}
             >
-                <SessionProvider>
+                <SessionProvider 
+                    refetchOnWindowFocus={false} 
+                    refetchWhenOffline={false}
+                >
                     <SmoothScroll>
                         <MobileNavProvider>
                             <ConfirmationDialogContextProvider>
