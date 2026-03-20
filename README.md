@@ -6,20 +6,6 @@
   <img src="https://contrib.rocks/image?repo=codeclubjusl/Srijan26" />
 </a>
 
-| | Contributor | GitHub | Contributions |
-|---|---|---|---|
-| <img src="https://github.com/yequalsmxplusc.png" width="40" style="border-radius:50%"> | **Piyush Gupta** | [@yequalsmxplusc](https://github.com/yequalsmxplusc) | 179 |
-| <img src="https://github.com/Dipram-9090.png" width="40" style="border-radius:50%"> | **Dipram Biswas** | [@Dipram-9090](https://github.com/Dipram-9090) | 31 |
-| <img src="https://github.com/atmikgoswami.png" width="40" style="border-radius:50%"> | **Atmik Goswami** | [@atmikgoswami](https://github.com/atmikgoswami) | 30 |
-| <img src="https://github.com/rahul-p19.png" width="40" style="border-radius:50%"> | **Rahul Pandey** | [@rahul-p19](https://github.com/rahul-p19) | 30 |
-| <img src="https://github.com/SagnikGos.png" width="40" style="border-radius:50%"> | **Sagnik Goswami** | [@SagnikGos](https://github.com/SagnikGos) | 28 |
-| <img src="https://github.com/Lofty-Brambles.png" width="40" style="border-radius:50%"> | **Prantik Das** | [@Lofty-Brambles](https://github.com/Lofty-Brambles) | 23 |
-| <img src="https://github.com/rajdeepcodeshere247.png" width="40" style="border-radius:50%"> | **Rajdeep Das** | [@rajdeepcodeshere247](https://github.com/rajdeepcodeshere247) | 23 |
-| <img src="https://github.com/sarinsanyal.png" width="40" style="border-radius:50%"> | **Sarin Sanyal** | [@sarinsanyal](https://github.com/sarinsanyal) | 16 |
-| <img src="https://github.com/Ankush2603.png" width="40" style="border-radius:50%"> | **Ankush Kedia** | [@Ankush2603](https://github.com/Ankush2603) | 8 |
-| <img src="https://github.com/SH1V4M100.png" width="40" style="border-radius:50%"> | **Shivam Chatterjee** | [@SH1V4M100](https://github.com/SH1V4M100) | 7 |
-| <img src="https://github.com/saptarshiUpadhyay2006.png" width="40" style="border-radius:50%"> | **Saptarshi Upadhyay** | [@saptarshiUpadhyay2006](https://github.com/saptarshiUpadhyay2006) | 3 |
-
 ## To Run Locally
 
 To get the project running on your local machine, follow these barebone steps:
