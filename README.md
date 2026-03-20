@@ -1,6 +1,26 @@
-# Srijan '26
+# Jadavpur University's F.E.T.S.U. presents Srijan '26 Official Website Github Repository
 
-## Running Locally
+## Contributors
+
+<a href="https://github.com/codeclubjusl/Srijan26/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=codeclubjusl/Srijan26" />
+</a>
+
+| | Contributor | GitHub | Contributions |
+|---|---|---|---|
+| <img src="https://github.com/yequalsmxplusc.png" width="40" style="border-radius:50%"> | **Piyush Gupta** | [@yequalsmxplusc](https://github.com/yequalsmxplusc) | 179 |
+| <img src="https://github.com/Dipram-9090.png" width="40" style="border-radius:50%"> | **Dipram Biswas** | [@Dipram-9090](https://github.com/Dipram-9090) | 31 |
+| <img src="https://github.com/atmikgoswami.png" width="40" style="border-radius:50%"> | **Atmik Goswami** | [@atmikgoswami](https://github.com/atmikgoswami) | 30 |
+| <img src="https://github.com/rahul-p19.png" width="40" style="border-radius:50%"> | **Rahul Pandey** | [@rahul-p19](https://github.com/rahul-p19) | 30 |
+| <img src="https://github.com/SagnikGos.png" width="40" style="border-radius:50%"> | **Sagnik Goswami** | [@SagnikGos](https://github.com/SagnikGos) | 28 |
+| <img src="https://github.com/Lofty-Brambles.png" width="40" style="border-radius:50%"> | **Prantik Das** | [@Lofty-Brambles](https://github.com/Lofty-Brambles) | 23 |
+| <img src="https://github.com/rajdeepcodeshere247.png" width="40" style="border-radius:50%"> | **Rajdeep Das** | [@rajdeepcodeshere247](https://github.com/rajdeepcodeshere247) | 23 |
+| <img src="https://github.com/sarinsanyal.png" width="40" style="border-radius:50%"> | **Sarin Sanyal** | [@sarinsanyal](https://github.com/sarinsanyal) | 16 |
+| <img src="https://github.com/Ankush2603.png" width="40" style="border-radius:50%"> | **Ankush Kedia** | [@Ankush2603](https://github.com/Ankush2603) | 8 |
+| <img src="https://github.com/SH1V4M100.png" width="40" style="border-radius:50%"> | **Shivam Chatterjee** | [@SH1V4M100](https://github.com/SH1V4M100) | 7 |
+| <img src="https://github.com/saptarshiUpadhyay2006.png" width="40" style="border-radius:50%"> | **Saptarshi Upadhyay** | [@saptarshiUpadhyay2006](https://github.com/saptarshiUpadhyay2006) | 3 |
+
+## To Run Locally
 
 To get the project running on your local machine, follow these barebone steps:
 
@@ -39,16 +59,19 @@ To get the project running on your local machine, follow these barebone steps:
 
 ## Technical Architecture & Scaling Optimizations
 
-This codebase is specifically tuned for high traffic and optimal UX. Here's a summary of what's working under the hood:
+This codebase is tuned for medium to high traffic and optimal UX. Here's a summary of what's working under the hood:
 
 ### ⚡ Edge Requests Optimization
-To dramatically prevent unnecessary edge function execution limits being hit from high traffic, we dynamically deferred `prefetch` on deep navbar links, event listing cards, and dashboard routes. This means Next.js won't spam edge servers predicting where a hovering cursor *might* click, saving costs and server strain.
+To prevent unnecessary edge function execution limits from high traffic, we dynamically deferred `prefetch` on deep navbar links, event listing cards, and dashboard routes. This means Next.js won't spam edge servers predicting where a hovering cursor *might* click, saving costs and server strain.
 
-### 🌐 CDN Asset Serving (Vercel Blob)
-Large aesthetic assets—such as the massive background `webm` hero videos—are deployed remotely into Vercel Blob (CDN) rather than bulking the source code or main server memory, achieving lightning-fast progressive streaming universally.
+### 🌐 CDN Asset Serving (Cloudflare Caching)
+Large aesthetic assets—such as the massive background `webm` hero videos—are deployed remotely into Cloudflare Caching (large bandwidth) (CDN) rather than bulking the source code or main server memory, achieving lightning-fast progressive streaming universally.
 
 ### 🖼️ Image / Media Caching
 All images utilize the framework's native `next/image` pipelines. Coupled with strict `Cache-Control` headers for API/event listings (that reload only via explicit Superadmin UI invalidation), repeat visitors load almost everything directly from instantaneous cache.
+
+### Multiple Server Image Deployments
+This has been done to prevent any unforeseen conditions of downtime in website, three vercel deployments of our code were maintained and configured via cloudflare to manage proper distribution, availability of backups in case of multiple downtime/space completion.
 
 ### 🚀 Event Dynamic SEO (Next.js SSG)
 Event pages located at `/events/[slug]` maintain highly customized OpenGraph and Twitter SEO tags. However, instead of executing Server-Side Rendering (SSR) uniquely on every visit, the engine pre-builds all exact event pages at build time using `generateStaticParams()`. This results in perfectly generated HTML documents capable of scoring a 100 on Lighthouse instantaneously.
