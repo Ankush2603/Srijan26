@@ -3,6 +3,12 @@ import { Metadata } from "next";
 import { EVENTS_DATA } from "@/data/eventsList";
 import EventDetailsClient from "@/components/events/EventDetailsClient";
 
+export async function generateStaticParams() {
+  return EVENTS_DATA.map((event) => ({
+    slug: event.slug,
+  }));
+}
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
